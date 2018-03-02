@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Angular Basics expressions</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript">
+var app = angular.module("expressionApp", []);
+    app.controller("expressionController",function($scope){
+        $scope.expression1=10;
+        $scope.expression2 = 20;
+    });
+</script>
+</head>
+<body ng-app="expressionApp">
+    <form id="form1">
+    <div ng-controller="expressionController">
+        <div>Number Expression</div>
+        <p>The result is: {{expression1+expression2}}</p>
+    </div>
+    </form>
+</body>

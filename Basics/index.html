@@ -1,11 +1,20 @@
-<html>
-    <head>
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    </head>
-    <body>
-        <div ng-app="">
-            <input type="text" id="txtname" ng-model="name" />
-            <p style="background-color : #000000;">Your Username: {{name}}</p>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Angular Demo</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript">
+var myApp= angular.module("AngularApp",[]);
+myApp.controller("HelloController", function($scope){
+$scope.txtname = "";
+});
+</script>
+</head>
+<body ng-app="AngularApp">
+<div ng-controller="HelloController">
+<input type="text" ng-model = "txtname">
+<p>Enter Text : {{txtname}}</p>
+</div>
+</body>
 </html>

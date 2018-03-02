@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+AngularJs ng-bind Directive Example
+</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+var app = angular.module("AngularbindApp", []);
+app.controller("Angularbindctrl", function ($scope) {
+$scope.name = "";
+});
+</script>
+</head>
+<body ng-app="AngularbindApp">
+<div ng-controller="Angularbindctrl">
+Enter Name to Display :
+<input type="text" ng-model="name"><br />you entered : {{name}}
+</div>
+</body>
+</html>

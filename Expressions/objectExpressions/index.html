@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Angular Basics</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript">
+var app = angular.module("expressionApp", []);
+    app.controller("expressionController",function($scope){
+        $scope.expression={
+            key1:'Welcome',
+            key2:'to',
+            key3:'tutlane.com'
+        };
+    });
+</script>
+</head>
+<body ng-app="expressionApp">
+    <form id="form1">
+    <div ng-controller="expressionController">
+        <p>Pure JSON object conatins key value pairs as <br />
+        key1 : {{expression.key1}} <br /> 
+        key2 : {{expression.key2}} <br />
+        key3 : {{expression.key3}}</p>
+    </div>
+    </form>
+</body>

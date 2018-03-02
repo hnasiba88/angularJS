@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+AngularJs ng-if Directive Example
+</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+var app = angular.module("AngularngifApp", []);
+app.controller("ngifctrl", function ($scope) {
+$scope.items = ['one', 'two', 'three', 'four'];
+$scope.selectval = "one";
+});
+</script>
+</head>
+<body ng-app="AngularngifApp">
+<div ng-controller="ngifctrl">
+Select Item: <select ng-model="selectval" ng-options="item for item in items">
+</select>
+<br /><br />
+<div ng-if="selectval=='one'" style="border:1px solid #000; padding:10px; width:20%">
+<b>Show Div If Selected Value One</b>
+</div>
+</div>
+</body>
+</html>

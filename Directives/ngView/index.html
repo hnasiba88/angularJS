@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+AngularJs ng-view Directive Example
+</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+<script >
+var myApp = angular.module("AngularngviewApp", ['ngRoute']);
+myApp.config(['$routeProvider',
+function ($routeProvider) {
+$routeProvider.when('/', {
+templateUrl: 'sample1.html',
+controller: 'ngviewctrl'
+})
+}
+]);
+myApp.controller("ngviewctrl", function ($scope) {
+$scope.model = {
+text: "This is the example of ng-view in angular js"
+}
+});
+</script>
+</head>
+<body ng-app="AngularngviewApp">
+<div ng-controller="ngviewctrl">
+<ng-view></ng-view>
+</div>
+</body>
+</html>
