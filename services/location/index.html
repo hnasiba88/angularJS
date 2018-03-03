@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+AngularJs $location Service with Example
+</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript">
+var app = angular.module('locationApp', []);
+app.controller('locationCtrl', function ($scope, $location) {
+$scope.weburl = $location.absUrl();
+$scope.url = $location.url();
+$scope.pathUrl = $location.path();
+$scope.searchUrl = $location.search();
+$scope.urlhost = $location.host();
+$scope.urlport = $location.port();
+$scope.urlprotocol = $location.protocol();
+    $scope.hashUrl = $location.hash();
+});
+</script>
+</head>
+<body>
+<div ng-app="locationApp" ng-controller="locationCtrl">
+<p>Url of Webpage: {{weburl}}</p>
+<p>Host of Webpage: {{urlhost}}</p>
+<p>Port of Webpage: {{urlport}}</p>
+<p>Protocol of Webpage: {{urlprotocol}}</p>
+    <p>Url: {{url}}</p>
+    <p>Path: {{pathUrl}}</p>
+    <p>Search: {{searchUrl}}</p>
+</div>
+</body>
+</html>

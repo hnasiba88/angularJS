@@ -12,7 +12,7 @@ $http({
 method: 'GET',
 url: 'sample.html'
 }).then(function success(response) {
-$scope.myWelcome = response.data;
+$scope.myWelcome = response;
 }, function error(response) {
 });
 });
@@ -20,8 +20,7 @@ $scope.myWelcome = response.data;
 </head>
 <body>
 <div ng-app="serviceApp" ng-controller="serviceCtrl">
-<p>Hi, Guest</p>
-<h1>{{myWelcome}}</h1>
+<p>Hi, Guest</p><h1>{{myWelcome}}</h1>
 </div>
 </body>
 </html>

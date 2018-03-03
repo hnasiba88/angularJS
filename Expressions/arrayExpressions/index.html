@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-<title>
-AngularJs ng-app Directive Example
-</title>
+<meta charset="utf-8" />
+<title>Angular Basics</title>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript">
+var app = angular.module("expressionApp", []);
+    app.controller("expressionController",function($scope){
+        $scope.name="Student";
+        $scope.marks = [70,75,80,95];
+    });
+</script>
 </head>
-<body>
-Outside Name: {{name}}
-<div ng-app="" ng-init="name='Tutlane'">
-<p>Your Nmae: {{name}}</p>
-</div>
-Outside Name: {{name}}
+<body ng-app="expressionApp" ng-init="val1=hi">
+    <form id="form1">
+    <div ng-controller="expressionController">
+        <div>Array Expression</div>
+        Below is Marks obtained by <b>{{name}}</b> in different subjects:
+        <p>In Hindi he obtained <b>{{marks[0]}}</b> marks</p>
+        <p>In English he obtained <b>{{marks[1]}}</b> marks</p>
+        <p>In Physics he obtained <b>{{marks[2]}}</b> marks</p>
+        <p>In Math he obtained <b>{{marks[3]}}</b> marks</p>
+    </div>
+    </form>
 </body>
-</html>

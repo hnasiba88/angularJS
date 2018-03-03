@@ -1,0 +1,31 @@
+<!Doctype html>
+<html>
+<head>
+<title>Processing $http.jsonp() response in service</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+var app = angular.module('myServiceApp', []);
+app.controller('myServiceCtrl', function ($scope, $http) {
+$scope.doJSONPRequest = function () {
+var url = "http://public-api.wordpress.com/rest/v1/sites/wtmpeachtest.wordpress.com/posts?callback=JSON_CALLBACK";
+$http.jsonp(url)
+.success(function (data, status, headers, config) {
+$scope.details = data.posts[0].author.URL;
+$scope.statcode = status;
+})
+.error(function (data, status, headers, config) {
+$scope.statcode = status;
+});
+}
+});
+</script>
+</head>
+<body ng-app="myServiceApp">
+<div ng-controller="myServiceCtrl">
+<h3>Processing $http.jsonp() response in service</h3>
+<button ng-click="doJSONPRequest()">Click and make JSONP request</button>
+<p>Data Details: {{details}}</p>
+<p>Status Code: {{statcode}}</p>
+</div>
+</body>
+</html>
